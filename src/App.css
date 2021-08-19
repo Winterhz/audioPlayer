@@ -7,7 +7,6 @@ html, body{
   overflow-x: hidden;
   background-image: linear-gradient(to bottom right, rgb(113, 238, 234), rgb(41, 131, 136) , rgb(0, 43, 43));
 }
-
 .App {
   margin:0;
   padding:0;
