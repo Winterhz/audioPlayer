@@ -4,7 +4,7 @@ import Player from './components/Player';
 
 function App() {
   const [songs, setSongs] = useState([
-    {
+    { 
       title: "Giants And Companions",
       artist: "Some cool artist",
       img_src: "./images/song-1.jpg",
