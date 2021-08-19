@@ -38,14 +38,13 @@ function Player(props) {
                 return temp;
             })
         }
-        console.log(props.currentSongIndex);
     }
 
     return(
         <div className="player">
             
             <h3>Now Playing</h3>
-            <PlayerDetails song={props.songs[props.nextSongIndex]} />
+            <PlayerDetails song={props.songs[props.currentSongIndex]} />
             <PlayerControls 
                 currentSongIndex={props.currentSongIndex}
                 skipSong={skipSong}
@@ -54,7 +53,7 @@ function Player(props) {
                 audioPlayer={audioPlayer}
                 songs={props.songs}
             />
-            <p><b>Next song:</b> {props.songs[props.currentSongIndex].title} by {props.songs[props.currentSongIndex].artist}</p>
+            <p><b>Next song:</b> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</p>
         </div>
     )
 }
