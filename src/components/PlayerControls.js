@@ -14,7 +14,7 @@ function PlayerControls(props) {
         setDuration(seconds);
         progressBar.current.max = seconds;
         animationRef.current = requestAnimationFrame(whilePlaying);
-      }, [props.audioPlayer]); 
+      }); 
 
     const calculateTime = (secs) => {
         const minutes = Math.floor(secs / 60);
