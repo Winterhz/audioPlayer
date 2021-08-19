@@ -14,7 +14,7 @@ function PlayerControls(props) {
         setDuration(seconds);
         progressBar.current.max = seconds;
         animationRef.current = requestAnimationFrame(whilePlaying);
-      }); 
+      }, [props.audioPlayer]); 
 
     const calculateTime = (secs) => {
         const minutes = Math.floor(secs / 60);
@@ -59,10 +59,6 @@ function PlayerControls(props) {
     const forwardFive = () => {
         progressBar.current.value = Number(progressBar.current.value - -5);
         changeRange();
-    }
-
-    const nextSong = ( forwards = true ) => {
-        props.skipSong();
     }
 
     return(

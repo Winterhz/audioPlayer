@@ -69,9 +69,6 @@ html, body{
   background: antiquewhite;
   border-radius: 10px;
 }
-.progressBar::-moz-focus-outer{
-  border: 0;
-}
 .progressBar::before{
   content: '';
   height: 16px;
