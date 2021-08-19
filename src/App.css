@@ -1,38 +1,130 @@
+html, body{
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+  font-family: monospace;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-image: linear-gradient(to bottom right, rgb(113, 238, 234), rgb(41, 131, 136) , rgb(0, 43, 43));
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin:0;
+  padding:0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items:center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100%;
+}
+.player {
+  display: block;
+  background-color: #313131;
+  padding: 10px;
+  border-radius: 10%;
+  width: 450px;
+}
+.player > h3 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 18px;
+}
+.player > p {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 14px;
+}
+.playerDetails .songCoverImage {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.playerDetails .songCoverImage img {
+  position: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 410px;
+  max-height: 410px;
+  border-radius: 50%;
+}
+.playerDetails .songTitle{
+  color: whitesmoke;
+  font-size: 22px; 
+  text-shadow: 0 1px;
+}
+.playerDetails .songArtist{
+  color: whitesmoke;
+  font-size: 16px;
+}
+
+/******************************* controls **************************************/
+.progressBar{
+  position: relative;
+  width: 377px;
+  --seek-before-width: 0px;
+  --seek-before-color: tan;
+  --bar-bg: black;
+
+  appearance: none;
+  background: antiquewhite;
+  border-radius: 10px;
+}
+.progressBar::-moz-focus-outer{
+  border: 0;
+}
+.progressBar::before{
+  content: '';
+  height: 16px;
+  width: var(--seek-before-width);
+  background: var(--seek-before-color);
+  position: absolute;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+.progressBar:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background-color: blue;
+}
+.durationBarContainer {
+  display: flex;
+}
+.controlsContainer {
+  display: flex;
+}
+.controlsButton {
+  background-color: aqua;
+  height: 28px;
+  margin-left: 39px;
+  border : none;
+  border-radius: 20%;
+  color: darkblue;
+  font-size: 25px;
+  cursor: pointer;
+}
+#play {
+  color:blue;
+  border-radius: 50%;
+  padding-left: 7px;
+  width: 70px;
+  height: 60px;
+  padding-top: 7px;
+}
+.currentTime, .duration {
+  font-family: monospace;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 16px;
 }
