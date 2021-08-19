@@ -45,7 +45,7 @@ function Player(props) {
         <div className="player">
             
             <h3>Now Playing</h3>
-            <PlayerDetails song={props.songs[props.currentSongIndex]} />
+            <PlayerDetails song={props.songs[props.nextSongIndex]} />
             <PlayerControls 
                 currentSongIndex={props.currentSongIndex}
                 skipSong={skipSong}
